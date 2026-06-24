@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>History in an Afternoon — Pipeline Board</title>
+<style>
+  :root{
+    --bg:#faf9f5; --surface:#ffffff; --text:#2c2c2a; --muted:#5f5e5a; --hint:#888780;
+    --border:rgba(0,0,0,0.12); --border-strong:rgba(0,0,0,0.25);
+    --radius:12px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.5; padding:32px 24px;
+  }
+  header{max-width:1280px; margin:0 auto 24px;}
+  h1{font-size:22px; font-weight:500; margin:0 0 4px;}
+  .sub{font-size:14px; color:var(--muted); margin:0;}
+  .board{
+    max-width:1280px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(7, minmax(160px,1fr));
+    gap:12px; overflow-x:auto; padding-bottom:8px;
+  }
+  .col-head{
+    font-size:13px; font-weight:500; color:var(--muted);
+    padding-bottom:8px; border-bottom:1px solid var(--border-strong);
+    margin-bottom:12px; white-space:nowrap;
+  }
+  .count{color:var(--hint); font-weight:400;}
+  .card{border-radius:var(--radius); padding:11px 13px; margin-bottom:10px;}
+  .card .title{margin:0; font-size:13px; font-weight:500; line-height:1.35;}
+  .card .author{margin:5px 0 0; font-size:12px;}
+  .card .meta{margin:7px 0 0; font-size:11px;}
+  .empty{font-size:12px; color:var(--hint); font-style:italic; margin:0;}
+
+  .amber{background:#FAEEDA;}
+  .amber .title{color:#854F0B;} .amber .author,.amber .meta{color:#BA7517;}
+  .blue{background:#E6F1FB;}
+  .blue .title{color:#0C447C;} .blue .author,.blue .meta{color:#185FA5;}
+  .teal{background:#E1F5EE;}
+  .teal .title{color:#0F6E56;} .teal .author,.teal .meta{color:#1D9E75;}
+  .green{background:#EAF3DE;}
+  .green .title{color:#27500A;} .green .author,.green .meta{color:#3B6D11;}
+
+  footer{max-width:1280px; margin:28px auto 0; font-size:12px; color:var(--hint);}
+  @media (prefers-color-scheme: dark){
+    :root{--bg:#1f1e1c; --surface:#2c2c2a; --text:#ecebe6; --muted:#b4b2a9; --hint:#888780;
+      --border:rgba(255,255,255,0.14); --border-strong:rgba(255,255,255,0.28);}
+    .amber{background:#633806;} .amber .title{color:#FAC775;} .amber .author,.amber .meta{color:#EF9F27;}
+    .blue{background:#0C447C;} .blue .title{color:#B5D4F4;} .blue .author,.blue .meta{color:#85B7EB;}
+    .teal{background:#085041;} .teal .title{color:#9FE1CB;} .teal .author,.teal .meta{color:#5DCAA5;}
+    .green{background:#27500A;} .green .title{color:#C0DD97;} .green .author,.green .meta{color:#97C459;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>History in an Afternoon — Pipeline Board</h1>
+  <p class="sub">Each project sits under its current stage. Last updated 24 June 2026.</p>
+  <p class="sub" style="margin-top:2px;"></p>
+</header>
+
+<div class="board">
+
+  <div>
+    <div class="col-head">1 · Interest <span class="count">(4)</span></div>
+    <div class="card amber">
+      <p class="title">"At least it isn't Afghanistan"</p>
+      <p class="author">Chrissie Reilly</p>
+      <p class="meta">Greenlit for proposal · ~45k · Ramstein deployment</p>
+    </div>
+    <div class="card amber">
+      <p class="title">Music, Money, and Murder</p>
+      <p class="author">Chrissie Reilly</p>
+      <p class="meta">Door open · revisit Dec 2026 · Suge Knight</p>
+    </div>
+    <div class="card amber">
+      <p class="title">Civil War &amp; families (working)</p>
+      <p class="author">Jonathan Noyalas</p>
+      <p class="meta">Interest expressed · proposal after semester · Shenandoah Valley</p>
+    </div>
+    <div class="card amber">
+      <p class="title">Evans Covington (working)</p>
+      <p class="author">Neil P. Chatelain</p>
+      <p class="meta">Interest renewed · proposal in coming months · Black sailor, 54th Mass / Olustee</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="col-head">2 · Proposal <span class="count">(3)</span></div>
+    <div class="card green">
+      <p class="title">Antietam Tornado</p>
+      <p class="author">Dennis E. Frye</p>
+      <p class="meta">Proposal + 10 sample chapters in · ~40k · ms. due 9/30/26</p>
+    </div>
+    <div class="card green">
+      <p class="title">Visas for Millionaires?</p>
+      <p class="author">Austin Dean</p>
+      <p class="meta">Proposal + sample chapters in · ~35–40k · EB-5 visa history</p>
+    </div>
+    <div class="card green">
+      <p class="title">Country Editors</p>
+      <p class="author">Wade Shaffer &amp; Tim Bowman</p>
+      <p class="meta">Proposal + chapter outline in · rural Texas press &amp; political realignment</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="col-head">3 · Board <span class="count">(0)</span></div>
+    <p class="empty">—</p>
+  </div>
+
+  <div>
+    <div class="col-head">4 · Contract <span class="count">(2)</span></div>
+    <div class="card blue">
+      <p class="title">America First: Isolationism</p>
+      <p class="author">Phillip G. Payne</p>
+      <p class="meta">Advance contract 6/23/26 · ~40k words</p>
+    </div>
+    <div class="card blue">
+      <p class="title">1856: The Year That Broke America</p>
+      <p class="author">Brian Matthew Jordan &amp; Evan C. Rothera</p>
+      <p class="meta">Advance contract 6/24/26 · 50k words · antebellum crisis</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="col-head">5 · Manuscript <span class="count">(0)</span></div>
+    <p class="empty">—</p>
+  </div>
+
+  <div>
+    <div class="col-head">6 · Readers <span class="count">(1)</span></div>
+    <div class="card teal">
+      <p class="title">Chancellorsville</p>
+      <p class="author">Gary W. Gallagher</p>
+      <p class="meta">With readers · near complete</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="col-head">7 · Published <span class="count">(0)</span></div>
+    <p class="empty">—</p>
+  </div>
+
+</div>
+
+<footer>
+  Stages: 1 Expression of Interest · 2 Proposal · 3 Board Comments · 4 Advance Contract · 5 Manuscript Submission · 6 Reader Reports · 7 Publication
+</footer>
+</body>
+</html>
